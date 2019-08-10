@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script type="module" src="./build/index.js"></script>
+  </head>
+
+  <body>
+    <gradient-mesh
+      width="512"
+      height="512"
+      horizontal-resolution="10"
+      vertical-resolution="10"
+    >
+      <gradient-row>
+        <gradient-patch>
+          <gradient-stop
+            position="topLeft"
+            x="0"
+            y="0"
+            color="red"
+          ></gradient-stop>
+          <gradient-stop
+            position="topRight"
+            x="100"
+            y="0"
+            color="red"
+          ></gradient-stop>
+          <gradient-stop
+            position="bottomLeft"
+            x="0"
+            y="100"
+            color="blue"
+          ></gradient-stop>
+          <gradient-stop
+            position="bottomRight"
+            x="100"
+            y="100"
+            cp1x="125"
+            cp1y="75"
+            cp2x="75"
+            cp2y="125"
+            color="purple"
+          ></gradient-stop>
+        </gradient-patch>
+        <gradient-patch>
+          <gradient-stop position="topLeft"></gradient-stop>
+          <gradient-stop
+            position="topRight"
+            x="200"
+            y="0"
+            color="purple"
+          ></gradient-stop>
+          <gradient-stop position="bottomLeft"></gradient-stop>
+          <gradient-stop
+            position="bottomRight"
+            x="200"
+            y="100"
+            color="lime"
+          ></gradient-stop>
+        </gradient-patch>
+      </gradient-row>
+      <gradient-row>
+        <gradient-patch>
+          <gradient-stop position="topLeft"></gradient-stop>
+          <gradient-stop position="topRight"></gradient-stop>
+          <gradient-stop
+            position="bottomLeft"
+            x="0"
+            y="200"
+            color="orange"
+          ></gradient-stop>
+          <gradient-stop
+            position="bottomRight"
+            x="100"
+            y="200"
+            color="grey"
+          ></gradient-stop>
+        </gradient-patch>
+        <gradient-patch>
+          <gradient-stop position="topLeft"></gradient-stop>
+          <gradient-stop position="topRight"></gradient-stop>
+          <gradient-stop position="bottomLeft"></gradient-stop>
+          <gradient-stop
+            position="bottomRight"
+            x="200"
+            y="200"
+            color="navy"
+          ></gradient-stop>
+        </gradient-patch>
+      </gradient-row>
+    </gradient-mesh>
+  </body>
+</html>

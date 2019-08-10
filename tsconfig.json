@@ -1,0 +1,11 @@
+{
+  "include": ["src"],
+  "compileOnSave": true,
+  "compilerOptions": {
+    "strict": true,
+    "outDir": "build",
+    "module": "esnext",
+    "target": "es2019",
+    "sourceMap": true
+  }
+}
