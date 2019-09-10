@@ -1,14 +1,8 @@
-type Nullable<T> = T extends object
-  ? { [K in keyof T]: Nullable<T[K]> | null }
-  : T | null;
+type Nullable<T> = T | null;
 
 interface Point {
   x: number;
   y: number;
-}
-interface PartialPoint {
-  x?: number;
-  y?: number;
 }
 
 interface Color {
@@ -25,10 +19,10 @@ interface Stop {
   cp2: Point;
 }
 interface PartialStop {
-  coord: PartialPoint | null;
-  color: Color | null;
-  cp1: PartialPoint | null;
-  cp2: PartialPoint | null;
+  coord: Nullable<Partial<Point>>;
+  color: Nullable<Color>;
+  cp1: Nullable<Partial<Point>>;
+  cp2: Nullable<Partial<Point>>;
 }
 interface Edge {
   start: Point;
@@ -45,8 +39,8 @@ interface Patch {
 }
 
 interface PartialPatch {
-  topLeft: PartialStop | null;
-  topRight: PartialStop | null;
-  bottomLeft: PartialStop | null;
-  bottomRight: PartialStop | null;
+  topLeft: Nullable<PartialStop>;
+  topRight: Nullable<PartialStop>;
+  bottomLeft: Nullable<PartialStop>;
+  bottomRight: Nullable<PartialStop>;
 }

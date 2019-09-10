@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html0.55191502449>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <h1>Multiple Patches:</h1>
     <gradient-mesh
       width="512"
       height="512"
@@ -21,12 +22,16 @@
             position="topLeft"
             x="0"
             y="0"
+            cp2x="50"
+            cp2y="0"
             color="red"
           ></gradient-stop>
           <gradient-stop
             position="topRight"
             x="100"
-            y="0"
+            y="25"
+            cp1x="50"
+            cp1y="25"
             color="red"
           ></gradient-stop>
           <gradient-stop
@@ -89,6 +94,50 @@
             x="200"
             y="200"
             color="navy"
+          ></gradient-stop>
+        </gradient-patch>
+      </gradient-row>
+    </gradient-mesh>
+    <h1>Circle:</h1>
+    <gradient-mesh
+      width="512"
+      height="512"
+      horizontal-resolution="25"
+      vertical-resolution="25"
+    >
+      <gradient-row>
+        <gradient-patch>
+          <gradient-stop
+            position="topLeft"
+            x="50"
+            y="0"
+            cp1x="22.404"
+            cp2x="77.595"
+            color="red"
+          ></gradient-stop>
+          <gradient-stop
+            position="topRight"
+            x="100"
+            y="50"
+            cp1y="22.404"
+            cp2y="77.595"
+            color="yellow"
+          ></gradient-stop>
+          <gradient-stop
+            position="bottomRight"
+            x="50"
+            y="100"
+            cp2x="22.404"
+            cp1x="77.595"
+            color="green"
+          ></gradient-stop>
+          <gradient-stop
+            position="bottomLeft"
+            x="0"
+            y="50"
+            cp2y="22.404"
+            cp1y="77.595"
+            color="blue"
           ></gradient-stop>
         </gradient-patch>
       </gradient-row>

@@ -1,14 +1,22 @@
-const canvas = document.createElement("canvas");
-const context = canvas.getContext("2d");
+function colorParser() {
+  const cache = new Map();
+  const canvas = document.createElement("canvas");
+  const context = canvas.getContext("2d");
 
-export default (colorName: string) => {
-  if (context === null) throw new Error("Unable to object 2D context");
+  if (context === null) {
+    throw new Error("Unable to obtain canvas context");
+  }
 
-  Object.assign(canvas, { width: 1, height: 1 });
+  return (colorName: string) => {
+    if (!cache.has(colorName)) {
+      canvas.width = canvas.height = 1;
+      context.fillStyle = colorName;
+      context.fillRect(0, 0, 1, 1);
+      const [r, g, b, a] = context.getImageData(0, 0, 1, 1).data;
+      cache.set(colorName, { r, g, b, a });
+    }
+    return cache.get(colorName);
+  };
+}
 
-  context.fillStyle = colorName;
-  context.fillRect(0, 0, 1, 1);
-  const [r, g, b, a] = context.getImageData(0, 0, 1, 1).data;
-
-  return { r, g, b, a };
-};
+export default colorParser();
